@@ -4,21 +4,22 @@ To use this API, you'll need to have Node.js and MongoDB installed. Then follow 
 
 ````bash
 # Clone the repository
-```git clone <repository-url>```
+git clone <repository-url>
 
 # setup .env file
 
 # Install dependencies
-```npm install```
+npm install
 
 # Start the development server
-```npm run dev```
+npm run dev
 
 
-# User Routes Documentation
+# Expense Management API
 
-#This document describes all API endpoints available in the `UserRoutes` module. It includes route paths, HTTP methods, required data, responses, and status codes.
+This API provides endpoints for managing expenses, including creating, retrieving, updating, and deleting expense records.
 
+---
 
 ## **1. Register User**
 
@@ -248,7 +249,6 @@ This API provides endpoints for managing expenses, including creating, retrievin
   }
 }
 ```
-
 ## **4. Update Expense**
 
 - **Endpoint:** `/api/expenses/update-expense/:id`
@@ -258,10 +258,9 @@ This API provides endpoints for managing expenses, including creating, retrievin
 
 ```json
 {
-  "amount": 175.0
+  "amount": 175.00
 }
 ```
-
 -
 - **Response:**
 
@@ -291,12 +290,16 @@ This API provides endpoints for managing expenses, including creating, retrievin
 }
 ```
 
+
 ## Error Handling
 
 The API returns appropriate HTTP status codes and error messages for various scenarios:
 
-| Status Code | Error Type   | Description                                                                  |
-| ----------- | ------------ | ---------------------------------------------------------------------------- |
-| `400`       | Bad Request  | When request validation fails or an expense already exists for the same date |
-| `404`       | Not Found    | When no expense exists with the provided ID                                  |
-| `401`       | Unauthorized | When authentication is required but not provided or invalid                  |
+| Status Code | Error Type               | Description                                                                 |
+|-------------|--------------------------|-----------------------------------------------------------------------------|
+| `400`       | Bad Request              | When request validation fails or an expense already exists for the same date |
+| `404`       | Not Found                | When no expense exists with the provided ID                                 |
+| `401`       | Unauthorized             | When authentication is required but not provided or invalid                 |
+
+
+
