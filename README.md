@@ -4,22 +4,21 @@ To use this API, you'll need to have Node.js and MongoDB installed. Then follow 
 
 ````bash
 # Clone the repository
-git clone <repository-url>
+```git clone <repository-url>```
 
 # setup .env file
 
 # Install dependencies
-npm install
+```npm install```
 
 # Start the development server
-npm run dev
+```npm run dev```
 
 
 # User Routes Documentation
 
-This document describes all API endpoints available in the `UserRoutes` module. It includes route paths, HTTP methods, required data, responses, and status codes.
+#This document describes all API endpoints available in the `UserRoutes` module. It includes route paths, HTTP methods, required data, responses, and status codes.
 
----
 
 ## **1. Register User**
 
@@ -36,7 +35,7 @@ This document describes all API endpoints available in the `UserRoutes` module. 
   "phone": "0123456789",
   "address": "123 Main Street"
 }
-````
+```
 
 - **Response:**
 
