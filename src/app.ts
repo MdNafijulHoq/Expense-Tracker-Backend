@@ -1,13 +1,19 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import { envVars } from "./app/config/env";
 
 const app = express();
 
 app.use(express.json());
 app.set("trust proxy", 1);
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(
+  cors({
+    origin: envVars.FRONTEND_URL,
+    credentials: true,
+  })
+);
 app.use(cookieParser());
 
 // app.use("/api/v1", router);
