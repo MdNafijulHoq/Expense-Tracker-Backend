@@ -1,6 +1,9 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import { router } from "./app/router";
+import { globalErrorHandler } from "./app/middlewares/globalErrorhandler";
+import notFound from "./app/middlewares/notFound";
 
 const app = express();
 
@@ -10,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(cookieParser());
 
-// app.use("/api/v1", router);
+app.use("/api/v1", router);
 
 app.get("/", (req: Request, res: Response) => {
   res.status(200).json({
@@ -18,8 +21,8 @@ app.get("/", (req: Request, res: Response) => {
   });
 });
 
-// app.use(globalErrorHandler);
+app.use(globalErrorHandler);
 
-// app.use(notFound);
+app.use(notFound);
 
 export default app;
