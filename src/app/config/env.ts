@@ -9,6 +9,7 @@ interface EnvConfig {
   BCRYPT_SALT_ROUND: string;
   JWT_ACCESS_SECRET: string;
   JWT_ACCESS_EXPIRE: string;
+  FRONTEND_URL: string;
 }
 
 const laodEnvVariables = () => {
@@ -20,6 +21,7 @@ const laodEnvVariables = () => {
     "BCRYPT_SALT_ROUND",
     "JWT_ACCESS_EXPIRE",
     "JWT_ACCESS_SECRET",
+    "FRONTEND_URL",
   ];
 
   requrieEnvVariables.forEach((key) => {
@@ -35,6 +37,7 @@ const laodEnvVariables = () => {
     BCRYPT_SALT_ROUND: process.env.BCRYPT_SALT_ROUND as string,
     JWT_ACCESS_EXPIRE: process.env.JWT_ACCESS_EXPIRE as string,
     JWT_ACCESS_SECRET: process.env.JWT_ACCESS_SECRET as string,
+    FRONTEND_URL: process.env.FRONTEND_URL as string,
   };
 };
 
