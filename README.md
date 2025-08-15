@@ -1,23 +1,7 @@
-## Installation
 
-To use this API, you'll need to have Node.js and MongoDB installed. Then follow these steps:
+# User Routes Documentation
 
-````bash
-# Clone the repository
-git clone <repository-url>
-
-# setup .env file
-
-# Install dependencies
-npm install
-
-# Start the development server
-npm run dev
-
-
-# Expense Management API
-
-This API provides endpoints for managing expenses, including creating, retrieving, updating, and deleting expense records.
+This document describes all API endpoints available in the `UserRoutes` module. It includes route paths, HTTP methods, required data, responses, and status codes.
 
 ---
 
@@ -302,4 +286,18 @@ The API returns appropriate HTTP status codes and error messages for various sce
 | `401`       | Unauthorized             | When authentication is required but not provided or invalid                 |
 
 
+## Installation
 
+To use this API, you'll need to have Node.js and MongoDB installed. Then follow these steps:
+
+````bash
+# Clone the repository
+git clone <repository-url>
+
+# setup .env file
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
