@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ExpenseRoutes = void 0;
+const express_1 = require("express");
+const validateRequest_1 = require("../../middlewares/validateRequest");
+const expense_validation_1 = require("./expense.validation");
+const expense_controller_1 = require("./expense.controller");
+const checkAuth_1 = require("../../middlewares/checkAuth");
+const router = (0, express_1.Router)();
+router.post("/create-expense", (0, validateRequest_1.validateRequest)(expense_validation_1.createExpenseSchema), (0, checkAuth_1.checkAuth)(), expense_controller_1.ExpenseControllers.createExpense);
+router.get("/all-expense", expense_controller_1.ExpenseControllers.getAllExpenses);
+router.get("/each-expense/:id", expense_controller_1.ExpenseControllers.getSingleExpense);
+router.patch("/update-expense/:id", (0, checkAuth_1.checkAuth)(), expense_controller_1.ExpenseControllers.updateExpense);
+router.delete("/remove-expense/:id", (0, checkAuth_1.checkAuth)(), expense_controller_1.ExpenseControllers.deleteExpense);
+exports.ExpenseRoutes = router;

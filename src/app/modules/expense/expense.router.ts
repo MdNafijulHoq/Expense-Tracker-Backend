@@ -12,6 +12,7 @@ router.post(
   checkAuth(),
   ExpenseControllers.createExpense
 );
+
 router.get("/all-expense", ExpenseControllers.getAllExpenses);
 
 router.get("/each-expense/:id", ExpenseControllers.getSingleExpense);
